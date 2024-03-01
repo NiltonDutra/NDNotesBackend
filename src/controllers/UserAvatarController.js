@@ -13,7 +13,7 @@ class UserAvatarController {
     const user = await knex("users").where({id: user_id}).first();
 
     if(!user) {
-      throw new AppError("Somente usuários autenticados pode mudar o avatar", 401);
+      throw new AppError("Only authenticated users can change their avatar", 401);
     }
 
     if(user.avatar) {
